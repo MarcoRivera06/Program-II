@@ -1,8 +1,13 @@
-# Class II: GitHub
+# FOLDER
+
+## Semana 2
+
+## Class II: GitHub
 
 ## Comandos Linux
 
 ```bash
+
     clear -> limpiar la consola (ctrl + L)
     pwd → mostrar en qué directorio estamos
     exit -> salir de donde estamos trabajando
@@ -15,6 +20,7 @@
     history -> historial de comandos hechos
     javac -> para ver si hay errores
     java -> compilar el archivo
+
 ```
 
 ## Primeros programas en Java
@@ -56,7 +62,7 @@ public class Sumar {
       git pull
 ```
 
-## Clase 3 Prg II
+## Clase III Prg II
 
 1. Comand Palet -> ctrl + shift + P
 2. Quick Open -> ctrl + P
@@ -73,7 +79,7 @@ public class Sumar {
 ## 📁 Estructura del Proyecto
 
 ```bash
-.
+
 ├── assets/ #Carpeta destinada a recursos (imagenes, iconos, etc.)
 ├── .gitignore
 ├── Hi.class
@@ -91,3 +97,9 @@ public class Sumar {
 
 Link
 [https://github.com/MarcoRivera06/Program-II]
+
+## Semana 3
+
+## Java
+
+Inicios de java
