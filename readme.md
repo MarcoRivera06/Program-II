@@ -98,11 +98,10 @@ public class Sumar {
 Link
 [https://github.com/MarcoRivera06/Program-II]
 
-<<<<<<< HEAD
-=======
+# <<<<<<< HEAD
+
 ## Semana 3
 
 ## Java
 
 Inicios de java
->>>>>>> ecce9475203c0f23b979c35394703f00faf6caa1
