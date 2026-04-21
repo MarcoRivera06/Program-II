@@ -98,10 +98,30 @@ public class Sumar {
 Link
 [https://github.com/MarcoRivera06/Program-II]
 
-# <<<<<<< HEAD
-
 ## Semana 3
 
 ## Java
 
 Inicios de java
+
+## Semana 4
+
+Forma de solucionar problemas de programación
+
+![Forma de solucionar problemas ](assets/FlujoSolucion.png)
+
+Formas de optimización de código
+
+Una forma de optimización es el uso de un operador terminario
+Un operador ternario es un operador que tiene 3 partes (? : ;)
+
+EJEMPLO
+
+Normal
+if (a>10)
+      a = 100;
+else
+      a = -100;
+
+Optimizado (operador ternario)
+a = (a>10) ? 100 : -100;
