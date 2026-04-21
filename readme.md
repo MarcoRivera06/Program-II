@@ -50,11 +50,11 @@ public class Sumar {
 ## cmd-git
 
 ```bash
-      ** 1 vez **
+      *** 1 vez ***
       git clone
       git init : una vez por prj
 
-      cada día
+      *** cada día ***
       git satatus
       git add XXX / . :
       it comit -m "Creacion del prj"
@@ -117,11 +117,21 @@ Un operador ternario es un operador que tiene 3 partes (? : ;)
 
 EJEMPLO
 
-Normal
+```java
+//Normal
 if (a>10)
       a = 100;
 else
       a = -100;
 
-Optimizado (operador ternario)
+
+// Optimizado (operador ternario)
 a = (a>10) ? 100 : -100;
+
+```
+
+Para resolver problemas de programación lo ultimo que se tiene que hacer es programar, lo primero es tener una buena organización de los archivos o documentos del proyecto a desarollar, lo cual podemos modelar como un diagrama de las clases que tenemos o vamos a tener en DRAWIO.
+
+EJEMPLOS
+
+![Diagrama de clases](assets/Organizacion.png)
