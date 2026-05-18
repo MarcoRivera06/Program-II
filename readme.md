@@ -139,5 +139,11 @@ EJEMPLOS
 ## Semana 7
 
 Vimos como va a ser el examen, la presentacion de tareas, y como va a ser el examen.
+hicimos un ejemplo de un deber y ahora vamos a hacer un ejemplo de automatas.
 
+## AUTOMATA
+
+Cear algoritmo que validen correos en la epn
+Caracteres del automata Σ = {a...z,.,0...9,@,epn.edu.ec}
+L =
 
