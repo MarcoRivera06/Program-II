@@ -135,3 +135,9 @@ Para resolver problemas de programación lo ultimo que se tiene que hacer es pro
 EJEMPLOS
 
 ![Diagrama de clases](assets/Organizacion.png)
+
+## Semana 7
+
+Vimos como va a ser el examen, la presentacion de tareas, y como va a ser el examen.
+
+
