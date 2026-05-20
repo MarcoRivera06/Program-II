@@ -205,7 +205,7 @@ Q -> Conjunto de estados
 F -> Estados de aceptacion (q1, q2, q3...)
 δ -> Estado de transición
 L -> Combinaciones
-
+QFδ
 Tenemos el ejemplo de una maquina expendedora
 
 ![Automata](assets/MaquinaExp.png)
@@ -321,4 +321,15 @@ Errores cometidos por los estudiantes en los deberes:
 - No hacer un pull antes de cambiar hacer el merge de ramas.
 - No haberse hecho colaborador del proyecto en GitHub.
 - No hacer push en las dos ramas.
-Todo esto sirve para poder desarollar en nuna empresa en donde haya varios desarolladores (todas).
+
+> [!NOTE]
+> notasTodo esto sirve para poder desarollar en nuna empresa en donde haya varios desarolladores (todas).
+
+## Desarollo de un ejercicio
+
+L = {a+bc* / cd+}
+A = <Σ, Q, δ, F>
+Σ = {a, b, c, d}
+Q = {q0, q1, q2,..., q4}
+F = {q2, q4}
+δ(q0, a) = q1
