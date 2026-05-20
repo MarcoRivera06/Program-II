@@ -314,3 +314,11 @@ hicimos un ejemplo de un deber y ahora vamos a hacer un ejemplo de automatas.
 Cear algoritmo que validen correos en la epn
 Caracteres del automata Σ = {a...z,.,0...9,@,epn.edu.ec}
 L =
+
+Errores cometidos por los estudiantes en los deberes:
+
+- No trabajar en una rama "dev".
+- No hacer un pull antes de cambiar hacer el merge de ramas.
+- No haberse hecho colaborador del proyecto en GitHub.
+- No hacer push en las dos ramas.
+Todo esto sirve para poder desarollar en nuna empresa en donde haya varios desarolladores (todas).
