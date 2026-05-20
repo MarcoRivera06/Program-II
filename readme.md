@@ -104,6 +104,12 @@ Link
 
 Inicios de java
 
+Primero vimos la resolución de problemas, como forma de resolver para automatizarlos, todavia no vimos codigo pero si como debería ser el desarollo de los problemas en programación.
+
+como tendríamos que tener un fllujograma del codigo para que se pueda optimizar la resolcuón de los programas al codificar.
+
+![Image](assets/Flujograma.png)
+
 ## Semana 4
 
 Forma de solucionar problemas de programación
@@ -136,6 +142,168 @@ EJEMPLOS
 
 ![Diagrama de clases](assets/Organizacion.png)
 
+## Semana 5
+
+Vimos como teníamos que hacer neustros deberes y como tenemos que agregarlos al Github, también las formas en las que como grupo tenemos que tener un solo repositorio para todas las personas que son colabroadoras en el repositorio.
+
+![Image](assets/Credenciales_Github.png)
+
+## Propiedades(atributos) y Metodos
+
+Una clase tiene lo que son los atributos y los metodos, a que se refiere los atributos, son aquellas cualidades con las que cumple tal clase.
+
+Por otor lado los metodos con aquellas cosas que la clase puede hacer.
+
+![Clases](assets/Clases.png)
+
+Como podemos ver antes del tipoDato tenemos algo que se llama ambito este puede ser public, private o protected.
+
+Esta semana estuvo un tanto larga a cuestión también de que ya empezamos a programar o a codificar iniciando proyectos en java y haciendo unos cuantos poliretos.
+
+Aquí mi ejemplo.
+
+```java
+public class Figuras {
+  public void mostrarfigura() {
+        int filas = 5;
+
+        for (int i = 0; i < filas; i++) {
+
+            for (int j = 0; j < i * 4; j++) {
+                System.out.print(" ");
+            }
+            if (i == 0) {
+                System.out.println("___");
+            } else {
+                System.out.println("|___");
+  }
+
+}
+    }
+}
+
+```
+
+## Semana 6
+
+en Esta semana empezamos a ver lo que son los Poliretos más a profundidad como usar varias funciones en java y otro tipo de codificación llamado grafos y automoatas.
+
+Me gustaría presentar el grafo.
+
+![Grafo](assets/GrafoSimple.png)
+
+Claro este es un grafo simple, estos grafos se pueden representar matematica mente y gramaticalmente, por supuesto tmbn llevarlo a la codificación.
+
+Claro lo que se debe cumplir para poder realizar un grafo necesitamos lo siguiente.
+
+![Automata](assets/Automata.png)
+
+Donde A es el automata de nuestro problema y necesitamos:
+
+Q -> Conjunto de estados
+Σ -> Alfabeto (caracteres que intervienen en el automata)
+F -> Estados de aceptacion (q1, q2, q3...)
+δ -> Estado de transición
+L -> Combinaciones
+
+Tenemos el ejemplo de una maquina expendedora
+
+![Automata](assets/MaquinaExp.png)
+
+Necesitamos encontrrar patrones para poder resolver con más facilidad estos probelmas, para lo cual necesitamos ahcer una matriz llamada Matriz de Transición
+
+![Matriz](assets/MatrizTran.png)
+
+Con ella ya podemos ir a la resolucón final que me gusta llamarlo o codificación de nuestro problema en java.
+
+Al final de esta semana empezamos a ver lo que eran codificación en java demuchas formas
+
+Aqui unos ejemplos hechos por mi de mis deberes y Poliretos.
+
+```java
+public class Loading {
+
+    /*
+     * L07) Crear una barra es de 20 caracteres, la barra avanza cambiando la punta
+     * con
+     * movimiento rotacional signos \|/-|
+     * [ ==== /
+     *
+     * ] 20%
+     */
+    public void loading6() {
+        String[] symbols = { "\\", "|", "/", "-" };
+        int totalSteps = 20;
+
+        for (int i = 0; i <= totalSteps; i++) {
+            int progress = (i * 100) / totalSteps;
+            StringBuilder bar = new StringBuilder("[");
+            for (int j = 0; j < totalSteps; j++) {
+                if (j < i) {
+                    bar.append("=");
+                } else {
+                    bar.append(" ");
+                }
+            }
+            bar.append("] ").append(progress).append("% ").append(symbols[i % symbols.length]);
+            System.out.print("\r" + bar.toString());
+            try {
+                Thread.sleep(200); // Simula el tiempo de carga
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println("\nCarga completa!");
+
+        System.out.println("\nLoading con do while");
+        int contador = 0;
+        try {
+            do {
+                int progress = (contador * 100) / totalSteps;
+                StringBuilder bar = new StringBuilder("[");
+                for (int j = 0; j < totalSteps; j++) {
+                    if (j < contador) {
+                        bar.append("=");
+                    } else {
+                        bar.append(" ");
+                    }
+                }
+                bar.append("] ").append(progress).append("% ").append(symbols[contador % symbols.length]);
+                System.out.print("\r" + bar.toString());
+                contador++;
+                Thread.sleep(200); // Simula el tiempo de carga
+            } while (contador <= totalSteps);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("\nCarga completa!");
+
+        System.out.println("\nLoading con while");
+        contador = 0;
+        try {
+            while (contador <= totalSteps) {
+                int progress = (contador * 100) / totalSteps;
+                StringBuilder bar = new StringBuilder("[");
+                for (int j = 0; j < totalSteps; j++) {
+                    if (j < contador) {
+                        bar.append("=");
+                    } else {
+                        bar.append(" ");
+                    }
+                }
+                bar.append("] ").append(progress).append("% ").append(symbols[contador % symbols.length]);
+                System.out.print("\r" + bar.toString());
+                contador++;
+                Thread.sleep(200); // Simula el tiempo de carga
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+}
+```
+
 ## Semana 7
 
 Vimos como va a ser el examen, la presentacion de tareas, y como va a ser el examen.
@@ -146,4 +314,3 @@ hicimos un ejemplo de un deber y ahora vamos a hacer un ejemplo de automatas.
 Cear algoritmo que validen correos en la epn
 Caracteres del automata Σ = {a...z,.,0...9,@,epn.edu.ec}
 L =
-
