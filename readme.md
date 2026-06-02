@@ -333,3 +333,49 @@ A = <Σ, Q, δ, F>
 Q = {q0, q1, q2,..., q4}
 F = {q2, q4}
 δ(q0, a) = q1
+
+## Semana 9
+
+Enterga de notas.
+
+Resoluciòn de un ejercicio de la prueba.
+
+TIPO ARSENAL
+a = aviòn
+b = barco
+c = comboy
+d = dron
+t = tanque
+Cedula : 110343540 -> puede atacar a uno o muchos aviones (a+), o a un aviòn, un barco, un comboy y cero o muchos drones (abcd*).
+
+A=(Σ, Q, δ, F)
+L={a+/abcd*}
+
+![AutomataPrueba](assets/AutomataPrueba.png)
+
+> [!NOTE]
+> Siempre podemos empezar por la cadena minima y no puedo tener dos caminos a la misma letra.
+
+Palabras que acepta
+>(a)->si acepta,
+>(ab) -> no acepta,
+>(abc) -> si acepta.
+
+```bash
+├── Σ = {a, b, c, d}
+├── Q = {q0, q1, q2, q3, q4}
+├── F = {q1, q3, q4}
+├── δ(q0, a) = q1
+```
+
+```bash
+Matriz de transición 
+   | a | b | c | d | +
+q0 | 1 | e | e | e | e
+q1 | 3 | 2 | e | e | boom
+q2 | e | e | 4 | e | e
+q3 | 3 | e | e | e | boom
+q4 | e | e | e | 4 | boom
+```
+
+AHORA ESTAMOS LISTOS PARA PROGRAMAR.
