@@ -379,3 +379,16 @@ q4 | e | e | e | 4 | boom
 ```
 
 AHORA ESTAMOS LISTOS PARA PROGRAMAR.
+
+## Semana 10
+
+Definicion de objeto, clases, atributos y metodos, encapsulamiento, abstraccion.
+
+> [!NOTE]
+> Entre mejor puedas saber o ver como es el objeto, se podrà definir muchas màs cosas al objeto.
+
+UML -> lenguaje modelado unificado.
+
+Vamos a ver de un use case a un diagrama de clase, el Use Case sirve para un proceso general.
+
+ 
