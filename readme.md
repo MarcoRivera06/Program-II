@@ -389,6 +389,19 @@ Definicion de objeto, clases, atributos y metodos, encapsulamiento, abstraccion.
 
 UML -> lenguaje modelado unificado.
 
+Para crear un use case se necesitan las siguientes lines y figuras.
+
+![FiguraUseCase](assets/jacobson-use-case.png)
+
 Vamos a ver de un use case a un diagrama de clase, el Use Case sirve para un proceso general.
 
- 
+![USE CASE](assets/UseCase.png)
+
+ El "USE CASE" nos ayuda a dinbujar el proceso de negocio con dos puntos básicos.
+ -Estado actual
+ -Estado futuro
+
+Una vez hecho el use case podemos pasar a un "Diagrama de Clase" y de este sle el codigo por lo cual tiene que ser igual a lo que sale en el diagrama de clase.
+
+> [ERRORES VISTOS EN EL DEBER]:
+> Ninguna burbuja va suelta en el diagramado del use case, especificar de mejor forma los metodos en las burbujas para que no se confunda cuando hagamos el diagrama de clase y tmbn darse cuenta que el conjunto de los meotodos sea una generalidad, no es que entr más elipses tenga mejor es más importante que tengas unas bien definidas, 
