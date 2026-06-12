@@ -205,7 +205,7 @@ Q -> Conjunto de estados
 F -> Estados de aceptacion (q1, q2, q3...)
 δ -> Estado de transición
 L -> Combinaciones
-
+QFδ
 Tenemos el ejemplo de una maquina expendedora
 
 ![Automata](assets/MaquinaExp.png)
@@ -314,3 +314,103 @@ hicimos un ejemplo de un deber y ahora vamos a hacer un ejemplo de automatas.
 Cear algoritmo que validen correos en la epn
 Caracteres del automata Σ = {a...z,.,0...9,@,epn.edu.ec}
 L =
+
+Errores cometidos por los estudiantes en los deberes:
+
+- No trabajar en una rama "dev".
+- No hacer un pull antes de cambiar hacer el merge de ramas.
+- No haberse hecho colaborador del proyecto en GitHub.
+- No hacer push en las dos ramas.
+
+> [!NOTE]
+> notasTodo esto sirve para poder desarollar en nuna empresa en donde haya varios desarolladores (todas).
+
+## Desarollo de un ejercicio
+
+L = {a+bc* / cd+}
+A = <Σ, Q, δ, F>
+Σ = {a, b, c, d}
+Q = {q0, q1, q2,..., q4}
+F = {q2, q4}
+δ(q0, a) = q1
+
+## Semana 9
+
+Enterga de notas.
+
+Resoluciòn de un ejercicio de la prueba.
+
+TIPO ARSENAL
+a = aviòn
+b = barco
+c = comboy
+d = dron
+t = tanque
+Cedula : 110343540 -> puede atacar a uno o muchos aviones (a+), o a un aviòn, un barco, un comboy y cero o muchos drones (abcd*).
+
+A=(Σ, Q, δ, F)
+L={a+/abcd*}
+
+![AutomataPrueba](assets/AutomataPrueba.png)
+
+> [!NOTE]
+> Siempre podemos empezar por la cadena minima y no puedo tener dos caminos a la misma letra.
+
+Palabras que acepta
+>(a)->si acepta,
+>(ab) -> no acepta,
+>(abc) -> si acepta.
+
+```bash
+├── Σ = {a, b, c, d}
+├── Q = {q0, q1, q2, q3, q4}
+├── F = {q1, q3, q4}
+├── δ(q0, a) = q1
+```
+
+```bash
+Matriz de transición 
+   | a | b | c | d | +
+q0 | 1 | e | e | e | e
+q1 | 3 | 2 | e | e | boom
+q2 | e | e | 4 | e | e
+q3 | 3 | e | e | e | boom
+q4 | e | e | e | 4 | boom
+```
+
+AHORA ESTAMOS LISTOS PARA PROGRAMAR.
+
+## Semana 10
+
+Definicion de objeto, clases, atributos y metodos, encapsulamiento, abstraccion.
+
+> [!NOTE]
+> Entre mejor puedas saber o ver como es el objeto, se podrà definir muchas màs cosas al objeto.
+
+UML -> lenguaje modelado unificado.
+
+Para crear un use case se necesitan las siguientes lines y figuras.
+
+![FiguraUseCase](assets/jacobson-use-case.png)
+
+Vamos a ver de un use case a un diagrama de clase, el Use Case sirve para un proceso general.
+
+![USE CASE](assets/UseCase.png)
+
+ El "USE CASE" nos ayuda a dinbujar el proceso de negocio con dos puntos básicos.
+ -Estado actual
+ -Estado futuro
+
+Una vez hecho el use case podemos pasar a un "Diagrama de Clase" y de este sle el codigo por lo cual tiene que ser igual a lo que sale en el diagrama de clase.
+
+> [ERRORES VISTOS EN EL DEBER]:
+> Ninguna burbuja va suelta en el diagramado del use case, especificar de mejor forma los metodos en las burbujas para que no se confunda cuando hagamos el diagrama de clase y tmbn darse cuenta que el conjunto de los meotodos sea una generalidad, no es que entr más elipses tenga mejor es más importante que tengas unas bien definidas.
+
+Ejemplo Hecho en clases.
+![USE CASE EPN](assets/UseCaseSistemaEPN.png)
+
+Creación de clases en según el diagrama del Use Case
+
+
+> [Recomendaciones en el diagrama de clases]:
+> los metodos no deben imprimir datos.
