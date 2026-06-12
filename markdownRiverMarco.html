@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>markdownRiverMarco.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="folder">FOLDER</h1>
+<h2 id="semana-2">Semana 2</h2>
+<h2 id="class-ii-github">Class II: GitHub</h2>
+<h2 id="comandos-linux">Comandos Linux</h2>
+<pre class="hljs"><code><div>
+    clear -&gt; limpiar la consola (ctrl + L)
+    <span class="hljs-built_in">pwd</span> → mostrar en qué directorio estamos
+    <span class="hljs-built_in">exit</span> -&gt; salir de donde estamos trabajando
+    <span class="hljs-built_in">touch</span> -&gt; crear un archivo vacio
+    <span class="hljs-built_in">rm</span> -&gt; borrar un archivo
+    <span class="hljs-built_in">ls</span> -&gt; listar archivos
+    <span class="hljs-built_in">ls</span> -a -&gt; listar todo
+    <span class="hljs-built_in">ls</span> -l -&gt; listar como lista
+    <span class="hljs-built_in">echo</span> -&gt; crear un archivo con texto
+    <span class="hljs-built_in">history</span> -&gt; historial de comandos hechos
+    javac -&gt; para ver si hay errores
+    java -&gt; compilar el archivo
+
+</div></code></pre>
+<h2 id="primeros-programas-en-java">Primeros programas en Java</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Hi</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        System.out.println(<span class="hljs-string">&quot;Hi, Celtic!&quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;Hi, amo&quot;</span>);
+    }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Sumar</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">suma</span> <span class="hljs-operator">=</span> a + b;
+        System.out.println(<span class="hljs-string">&quot;La suma de &quot;</span> + a + <span class="hljs-string">&quot; y &quot;</span> + b + <span class="hljs-string">&quot; es: &quot;</span> + suma);
+    }
+}
+</div></code></pre>
+<h2 id="cmd-git">cmd-git</h2>
+<pre class="hljs"><code><div>      *** 1 vez ***
+      git <span class="hljs-built_in">clone</span>
+      git init : una vez por prj
+
+      *** cada día ***
+      git satatus
+      git add XXX / . :
+      it comit -m <span class="hljs-string">&quot;Creacion del prj&quot;</span>
+      git push :
+      git pull
+</div></code></pre>
+<h2 id="clase-iii-prg-ii">Clase III Prg II</h2>
+<ol>
+<li>Comand Palet -&gt; ctrl + shift + P</li>
+<li>Quick Open -&gt; ctrl + P</li>
+<li>Toggle Sidebar -&gt; ctrl + B</li>
+<li>Multi Select cursor -&gt; ctrl + D</li>
+<li>Copy Line shift + alt + up or shit + alt + down</li>
+<li>Coment Code Block -&gt; una linea ctrl + k + c varias lineas shift + alt + a <!-- uy a lo bien que fue  --></li>
+<li>Go back / move forward -&gt; alt + --&gt; or + -&gt;</li>
+<li>Show all symbols ctrl + T</li>
+<li>Trigger suggestion or trigger parameter hints -&gt; ctrl + space or ctrl + shit + space</li>
+</ol>
+<h2 id="project-inicial">Project Inicial</h2>
+<h2 id="-estructura-del-proyecto">📁 Estructura del Proyecto</h2>
+<pre class="hljs"><code><div>
+├── assets/ <span class="hljs-comment">#Carpeta destinada a recursos (imagenes, iconos, etc.)</span>
+├── .gitignore
+├── Hi.class
+├── Hi.java
+├── Sumar.java
+└── readme.md
+</div></code></pre>
+<h2 id="imagen-del-proyecto">Imagen del proyecto</h2>
+<p><img src="assets/image.png" alt="Image"></p>
+<blockquote>
+<p>[!NOTE]
+notas</p>
+</blockquote>
+<p>Link
+[https://github.com/MarcoRivera06/Program-II]</p>
+<h2 id="semana-3">Semana 3</h2>
+<h2 id="java">Java</h2>
+<p>Inicios de java</p>
+<p>Primero vimos la resolución de problemas, como forma de resolver para automatizarlos, todavia no vimos codigo pero si como debería ser el desarollo de los problemas en programación.</p>
+<p>como tendríamos que tener un fllujograma del codigo para que se pueda optimizar la resolcuón de los programas al codificar.</p>
+<p><img src="assets/Flujograma.png" alt="Image"></p>
+<h2 id="semana-4">Semana 4</h2>
+<p>Forma de solucionar problemas de programación</p>
+<p><img src="assets/FlujoSolucion.png" alt="Forma de solucionar problemas "></p>
+<p>Formas de optimización de código</p>
+<p>Una forma de optimización es el uso de un operador terminario
+Un operador ternario es un operador que tiene 3 partes (? : <img class="emoji" alt="wink" src="data:image/png;base64,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" /></p>
+<p>EJEMPLO</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//Normal</span>
+<span class="hljs-keyword">if</span> (a&gt;<span class="hljs-number">10</span>)
+      a = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">else</span>
+      a = -<span class="hljs-number">100</span>;
+
+
+<span class="hljs-comment">// Optimizado (operador ternario)</span>
+a = (a&gt;<span class="hljs-number">10</span>) ? <span class="hljs-number">100</span> : -<span class="hljs-number">100</span>;
+
+</div></code></pre>
+<p>Para resolver problemas de programación lo ultimo que se tiene que hacer es programar, lo primero es tener una buena organización de los archivos o documentos del proyecto a desarollar, lo cual podemos modelar como un diagrama de las clases que tenemos o vamos a tener en DRAWIO.</p>
+<p>EJEMPLOS</p>
+<p><img src="assets/Organizacion.png" alt="Diagrama de clases"></p>
+<h2 id="semana-5">Semana 5</h2>
+<p>Vimos como teníamos que hacer neustros deberes y como tenemos que agregarlos al Github, también las formas en las que como grupo tenemos que tener un solo repositorio para todas las personas que son colabroadoras en el repositorio.</p>
+<p><img src="assets/Credenciales_Github.png" alt="Image"></p>
+<h2 id="propiedadesatributos-y-metodos">Propiedades(atributos) y Metodos</h2>
+<p>Una clase tiene lo que son los atributos y los metodos, a que se refiere los atributos, son aquellas cualidades con las que cumple tal clase.</p>
+<p>Por otor lado los metodos con aquellas cosas que la clase puede hacer.</p>
+<p><img src="assets/Clases.png" alt="Clases"></p>
+<p>Como podemos ver antes del tipoDato tenemos algo que se llama ambito este puede ser public, private o protected.</p>
+<p>Esta semana estuvo un tanto larga a cuestión también de que ya empezamos a programar o a codificar iniciando proyectos en java y haciendo unos cuantos poliretos.</p>
+<p>Aquí mi ejemplo.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Figuras</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mostrarfigura</span><span class="hljs-params">()</span> {
+        <span class="hljs-type">int</span> <span class="hljs-variable">filas</span> <span class="hljs-operator">=</span> <span class="hljs-number">5</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; filas; i++) {
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; i * <span class="hljs-number">4</span>; j++) {
+                System.out.print(<span class="hljs-string">&quot; &quot;</span>);
+            }
+            <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) {
+                System.out.println(<span class="hljs-string">&quot;___&quot;</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(<span class="hljs-string">&quot;|___&quot;</span>);
+  }
+
+}
+    }
+}
+
+</div></code></pre>
+<h2 id="semana-6">Semana 6</h2>
+<p>en Esta semana empezamos a ver lo que son los Poliretos más a profundidad como usar varias funciones en java y otro tipo de codificación llamado grafos y automoatas.</p>
+<p>Me gustaría presentar el grafo.</p>
+<p><img src="assets/GrafoSimple.png" alt="Grafo"></p>
+<p>Claro este es un grafo simple, estos grafos se pueden representar matematica mente y gramaticalmente, por supuesto tmbn llevarlo a la codificación.</p>
+<p>Claro lo que se debe cumplir para poder realizar un grafo necesitamos lo siguiente.</p>
+<p><img src="assets/Automata.png" alt="Automata"></p>
+<p>Donde A es el automata de nuestro problema y necesitamos:</p>
+<p>Q -&gt; Conjunto de estados
+Σ -&gt; Alfabeto (caracteres que intervienen en el automata)
+F -&gt; Estados de aceptacion (q1, q2, q3...)
+δ -&gt; Estado de transición
+L -&gt; Combinaciones</p>
+<p>Tenemos el ejemplo de una maquina expendedora</p>
+<p><img src="assets/MaquinaExp.png" alt="Automata"></p>
+<p>Necesitamos encontrrar patrones para poder resolver con más facilidad estos probelmas, para lo cual necesitamos ahcer una matriz llamada Matriz de Transición</p>
+<p><img src="assets/MatrizTran.png" alt="Matriz"></p>
+<p>Con ella ya podemos ir a la resolucón final que me gusta llamarlo o codificación de nuestro problema en java.</p>
+<p>Al final de esta semana empezamos a ver lo que eran codificación en java demuchas formas</p>
+<p>Aqui unos ejemplos hechos por mi de mis deberes y Poliretos.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Loading</span> {
+
+    <span class="hljs-comment">/*
+     * L07) Crear una barra es de 20 caracteres, la barra avanza cambiando la punta
+     * con
+     * movimiento rotacional signos \|/-|
+     * [ ==== /
+     *
+     * ] 20%
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loading6</span><span class="hljs-params">()</span> {
+        String[] symbols = { <span class="hljs-string">&quot;\\&quot;</span>, <span class="hljs-string">&quot;|&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span> };
+        <span class="hljs-type">int</span> <span class="hljs-variable">totalSteps</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= totalSteps; i++) {
+            <span class="hljs-type">int</span> <span class="hljs-variable">progress</span> <span class="hljs-operator">=</span> (i * <span class="hljs-number">100</span>) / totalSteps;
+            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">bar</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(<span class="hljs-string">&quot;[&quot;</span>);
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; totalSteps; j++) {
+                <span class="hljs-keyword">if</span> (j &lt; i) {
+                    bar.append(<span class="hljs-string">&quot;=&quot;</span>);
+                } <span class="hljs-keyword">else</span> {
+                    bar.append(<span class="hljs-string">&quot; &quot;</span>);
+                }
+            }
+            bar.append(<span class="hljs-string">&quot;] &quot;</span>).append(progress).append(<span class="hljs-string">&quot;% &quot;</span>).append(symbols[i % symbols.length]);
+            System.out.print(<span class="hljs-string">&quot;\r&quot;</span> + bar.toString());
+            <span class="hljs-keyword">try</span> {
+                Thread.sleep(<span class="hljs-number">200</span>); <span class="hljs-comment">// Simula el tiempo de carga</span>
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println(<span class="hljs-string">&quot;\nCarga completa!&quot;</span>);
+
+        System.out.println(<span class="hljs-string">&quot;\nLoading con do while&quot;</span>);
+        <span class="hljs-type">int</span> <span class="hljs-variable">contador</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">do</span> {
+                <span class="hljs-type">int</span> <span class="hljs-variable">progress</span> <span class="hljs-operator">=</span> (contador * <span class="hljs-number">100</span>) / totalSteps;
+                <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">bar</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(<span class="hljs-string">&quot;[&quot;</span>);
+                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; totalSteps; j++) {
+                    <span class="hljs-keyword">if</span> (j &lt; contador) {
+                        bar.append(<span class="hljs-string">&quot;=&quot;</span>);
+                    } <span class="hljs-keyword">else</span> {
+                        bar.append(<span class="hljs-string">&quot; &quot;</span>);
+                    }
+                }
+                bar.append(<span class="hljs-string">&quot;] &quot;</span>).append(progress).append(<span class="hljs-string">&quot;% &quot;</span>).append(symbols[contador % symbols.length]);
+                System.out.print(<span class="hljs-string">&quot;\r&quot;</span> + bar.toString());
+                contador++;
+                Thread.sleep(<span class="hljs-number">200</span>); <span class="hljs-comment">// Simula el tiempo de carga</span>
+            } <span class="hljs-keyword">while</span> (contador &lt;= totalSteps);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println(<span class="hljs-string">&quot;\nCarga completa!&quot;</span>);
+
+        System.out.println(<span class="hljs-string">&quot;\nLoading con while&quot;</span>);
+        contador = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">while</span> (contador &lt;= totalSteps) {
+                <span class="hljs-type">int</span> <span class="hljs-variable">progress</span> <span class="hljs-operator">=</span> (contador * <span class="hljs-number">100</span>) / totalSteps;
+                <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">bar</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(<span class="hljs-string">&quot;[&quot;</span>);
+                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; totalSteps; j++) {
+                    <span class="hljs-keyword">if</span> (j &lt; contador) {
+                        bar.append(<span class="hljs-string">&quot;=&quot;</span>);
+                    } <span class="hljs-keyword">else</span> {
+                        bar.append(<span class="hljs-string">&quot; &quot;</span>);
+                    }
+                }
+                bar.append(<span class="hljs-string">&quot;] &quot;</span>).append(progress).append(<span class="hljs-string">&quot;% &quot;</span>).append(symbols[contador % symbols.length]);
+                System.out.print(<span class="hljs-string">&quot;\r&quot;</span> + bar.toString());
+                contador++;
+                Thread.sleep(<span class="hljs-number">200</span>); <span class="hljs-comment">// Simula el tiempo de carga</span>
+            }
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+}
+</div></code></pre>
+<h2 id="semana-7">Semana 7</h2>
+<p>Vimos como va a ser el examen, la presentacion de tareas, y como va a ser el examen.
+hicimos un ejemplo de un deber y ahora vamos a hacer un ejemplo de automatas.</p>
+<h2 id="automata">AUTOMATA</h2>
+<p>Cear algoritmo que validen correos en la epn
+Caracteres del automata Σ = {a...z,.,0...9,@,epn.edu.ec}
+L =</p>
+
+</body>
+</html>
