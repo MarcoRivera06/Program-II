@@ -411,6 +411,5 @@ Ejemplo Hecho en clases.
 
 Creación de clases en según el diagrama del Use Case
 
-
 > [Recomendaciones en el diagrama de clases]:
 > los metodos no deben imprimir datos.
