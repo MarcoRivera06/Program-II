@@ -413,3 +413,98 @@ Creación de clases en según el diagrama del Use Case
 
 > [Recomendaciones en el diagrama de clases]:
 > los metodos no deben imprimir datos.
+
+## Semana 11
+
+ahora acabamos de ver los ejmplos que teníamos pendientes en la clase y empezamos a implementar lo que se llama herencia asociación y lo que son las interfaces.
+
+Herencia : es un pilar de la Programación Orientada a Objetos (POO) que permite crear nuevas clases basadas en clases ya existentes. La nueva clase (hija) hereda los atributos y métodos de la original (padre), lo que fomenta la reutilización de código y establece relaciones jerárquicas directas.
+
+```java
+//clase padre 
+public class mamifero {
+    int orejas;
+    int trompa; 
+  public String amamantar() {
+        System.out.println ("Esta mamando");
+    }
+}
+
+```
+
+```java
+//clase hija 
+public class perro extends mamifero {
+    int orejas;
+    int trompa; 
+  public String amamantar() {
+        System.out.println ("Esta mamando");
+    }
+}
+
+```
+
+Asociación : en la Programación Orientada a Objetos (POO), una asociación es una relación estructural que conecta dos o más clases. Permite que objetos independientes interactúen y colaboren entre sí para realizar tareas, sin que ninguno sea dueño del otro
+
+```java
+class Estudiante {
+    private String nombre;
+
+    public Estudiante(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+}
+
+class Universidad {
+    private String nombre;
+
+    public Universidad(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void matricular(Estudiante estudiante) {
+        System.out.println(
+            estudiante.getNombre() +
+            " fue matriculado en " +
+            nombre
+        );
+    }
+}
+```
+
+Interface : En Programación Orientada a Objetos (POO), una interfaz es un contrato formal que define un conjunto de métodos y propiedades que una clase debe implementar. Solo dicta qué se debe hacer, pero no cómo se hace, lo que permite que diferentes clases tengan sus propias lógicas.
+
+```java
+interface Impresora {
+    void imprimir(String documento);
+}
+
+class ImpresoraLaser implements Impresora {
+    @Override
+    public void imprimir(String documento) {
+        System.out.println("Imprimiendo en láser: " + documento);
+    }
+}
+```
+
+> [!NOTE]
+> Todo debe estar en un mismo package.
+
+## Semana 12
+
+Ahora vamos a hacee un ejemplo de como todo esto que hemos visto
+vamos a hacer la mujer perfecta
+tal que va a tener estas cosas
+
+*MujerPerfecta*
+
+- alta
+- flaca
+- cabello ondulado
+- fuerte
+
+traer de 3 a 4 cartulinas A4 tijeras goma puntira 
