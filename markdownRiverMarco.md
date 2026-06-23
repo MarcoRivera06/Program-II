@@ -507,4 +507,4 @@ tal que va a tener estas cosas
 - cabello ondulado
 - fuerte
 
-traer de 3 a 4 cartulinas A4 tijeras goma puntira 
+traer de 3 a 4 cartulinas A4 tijeras goma puntira
